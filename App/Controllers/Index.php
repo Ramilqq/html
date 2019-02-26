@@ -8,7 +8,7 @@ class Index extends Controller{
 
 	protected $dbh;
 
-	public function action (){
+	public function handle (){
 		$this -> view -> news = News::expend();
 		$this -> view -> display(__DIR__ . "/../../templates/index.php");
 	}

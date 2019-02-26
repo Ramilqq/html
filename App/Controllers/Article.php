@@ -8,7 +8,7 @@ class Article extends Controller{
 
 	protected $dbh;
 
-	public function action (){
+	public function handle (){
 		$this -> view -> news = News::expendStr();
 		$this -> view -> display(__DIR__ . "/../../templates/article.php");
 	}

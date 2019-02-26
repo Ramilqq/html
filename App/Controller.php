@@ -11,5 +11,17 @@ abstract class Controller {
 		$this -> view =  new View();
 	}
 
-	abstract public function action ();
+	public function access () : bool{
+		return true;
+	}
+
+
+	public function action (){
+		if ($this -> access()) {
+			$this -> handle();
+		}
+		else {
+			die('ERROR');
+		}
+	}
 }

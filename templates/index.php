@@ -19,7 +19,7 @@
           <button type="button" class="btn btn-primary">Главная</button>
           <button type="button" class="btn btn-outline-primary">Войти</button>
           <button type="button" class="btn btn-outline-primary">Регистрация</button> 
-          <a type="button" class="btn btn-outline-primary" href="admin-add.php">Admin</a> 
+          <a type="button" class="btn btn-outline-primary" href="/?cntr=AdminAdd">Admin</a> 
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
         <div class="row">
           <div class="col-sm">
             <div class="list-group">
-              <a href="article.php?id=<?php echo $item -> id; ?>" 
+              <a href="/?cntr=Article&id=<?php echo $item -> id; ?>" 
                 class="list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1"><?php echo $item -> tittle; ?></h5>

@@ -7,8 +7,10 @@ session_start(['cookie_lifetime' => 86400]);
 
 require_once __DIR__ . '/App/autoload.php';
 
+$cntr = $_GET['cntr'] ?? 'Index';
+$class = '\App\Controllers\\' . $cntr;
 
 
-
-$controller = new App\Controllers\Index();
+$controller = new $class;
 $controller -> action();
+var_dump($class);
