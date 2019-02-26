@@ -1,0 +1,17 @@
+body1{
+	background-image:  url(/../../../Image/0001.jpg); 
+	background-size: 1366px 768px;
+	color: white;
+	font-family: fantasy;
+}
+
+.myright{
+  margin-left: 70%;
+}
+.myright{
+	margin-top: 10px;
+}
+form {
+    display: table;
+    width: 100%;
+}
