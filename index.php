@@ -11,6 +11,11 @@ $cntr = $_GET['cntr'] ?? 'Index';
 $class = '\App\Controllers\\' . $cntr;
 
 
+try{
 $controller = new $class;
 $controller -> action();
-var_dump($class);
+}
+
+catch (\Exception $error){
+	echo $error -> getMessage();
+}

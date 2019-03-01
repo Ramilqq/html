@@ -16,9 +16,9 @@
     <div class="row">
       <div class="col-2" align="left">
         <div class="btn-group-vertical btn-block" role="group" aria-label="Basic example">
-          <a type="button" class="btn btn-secondary" href="admin-add.php">Add</a>
-          <a type="button" class="btn btn-secondary" href="admin-dell.php">Dell</a>
-          <a type="button" class="btn btn-secondary" href="index.php">Home</a>
+          <a type="button" class="btn btn-secondary" href="/?cntr=AdminAdd">Add</a>
+          <a type="button" class="btn btn-secondary" href="/?cntr=AdminDell">Dell</a>
+          <a type="button" class="btn btn-secondary" href="/?cntr=Index">Home</a>
         </div>
       </div>
       <div class="col-10" align="left">

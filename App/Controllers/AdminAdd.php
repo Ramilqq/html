@@ -9,7 +9,6 @@ class AdminAdd extends Controller{
 	protected $dbh;
 
 	public function handle (){
-		#include __DIR__ . "/../templates/admin-add.php";
-		echo 1;
+		include __DIR__ . "/../../templates/adminadd.php";
 	}
 }

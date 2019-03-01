@@ -1,7 +1,7 @@
 <?php
 namespace App;
 
-class Db {
+class Db extends \exception{
 
 	protected $dbh;
 
@@ -18,7 +18,10 @@ class Db {
 
 	public function query (string $sql,array  $data=[], $class){
 		$sth = ($this -> dbh) -> prepare($sql);
-		$sth -> execute($data);
+		$q = $sth -> execute($data);
+		if (!$q) {
+			throw new \exception ('Error SQL');
+		}
 		return $sth-> fetchALL(\PDO::FETCH_CLASS, $class);
 	}
 

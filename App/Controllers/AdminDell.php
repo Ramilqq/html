@@ -10,6 +10,6 @@ class AdminDell extends Controller{
 
 	public function handle (){
 		$qwe =  \App\Model\News::expend();
-		include __DIR__ . "/../templates/admin-dell.php";
+		include __DIR__ . "/../../templates/admindell.php";
 	}
 }
