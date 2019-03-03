@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-  <link rel="stylesheet" href="App/View/Stile/css/bootstrap.css">
-  <link rel="stylesheet" href="App/View/Stile/mystile.css">
-  <script src="App/View/Stile/js/bootstrap.js"></script>
-
-  <title>myserver.website</title>
+  <?php require_once __DIR__ . '/../Blocks/Head.php'    ?>
 </head>
 <body>
 
@@ -15,15 +9,9 @@
   <div class="container">
     <div class="row">
       <div class="col-sm" align="right">
-        <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-primary">Главная</button>
-          <button type="button" class="btn btn-outline-primary">Войти</button>
-          <button type="button" class="btn btn-outline-primary">Регистрация</button> 
-          <a type="button" class="btn btn-outline-primary" href="/?cntr=AdminAdd">Admin</a> 
-        </div>
+        <?php require_once __DIR__ . '/../Blocks/Menu.php'    ?>
       </div>
     </div>
-
     <div class='myright'></div>
 
     <?php
@@ -38,7 +26,7 @@
                   <h5 class="mb-1"><?php echo $item -> tittle; ?></h5>
                   <small class="text-muted"> <?php  
                   $date = date_create_from_format("Y-m-d H:i:s", $item -> date);
-                  echo date_format($date, 'd-m-Y');
+                  //echo date_format($date, 'd-m-Y');
                   ?> </small>
                 </div>
                 <p class="mb-1"><?php echo  mb_strimwidth($item -> content, 0, 230, "...","utf-8"); ?></p>
@@ -53,6 +41,6 @@
       ?>
     </form>
 
-
+    <?php require_once __DIR__ . '/../Blocks/Js.php'    ?>
   </body>
   </html>

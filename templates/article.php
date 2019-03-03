@@ -1,29 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<?php require_once __DIR__ . '/../Blocks/Head.php'    ?>
 
-	<link rel="stylesheet" href="App/View/Stile/css/bootstrap.css">
-	<link rel="stylesheet" href="App/View/Stile/mystile.css">
-	<script src="App/View/Stile/js/bootstrap.js"></script>
-
-	<title>myserver.website</title>
 </head>
 <body>
 
 	<div class='myright'></div>
+
+
 	<div class="container">
 		<div class="row">
 			<div class="col-sm" align="right">
-				<div class="btn-group" role="group" aria-label="Basic example">
-					<a type="button" class="btn btn-primary" href="index.php">Главная</a>
-					<a type="button" class="btn btn-outline-primary">Войти</a>
-					<a type="button" class="btn btn-outline-primary">Регистрация</a> 
-					<a type="button" class="btn btn-outline-primary" href="admin-add.php">Admin</a> 
-				</div>
+				<?php require_once __DIR__ . '/../Blocks/Menu.php'    ?>
 			</div>
 		</div>
-
 		<div class='myright'></div>
 
 		<div class="row">
@@ -64,6 +55,7 @@
 
 
 
+	<?php require_once __DIR__ . '/../Blocks/Js.php'    ?>
 
 </body>
 </html>

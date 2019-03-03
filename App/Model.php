@@ -43,4 +43,12 @@ abstract class Model
 		$db = new Db();
 		$db -> extend($sql,$body);
 	}
+
+	public static function expendFind(string $log)
+	{
+		$db = new Db();
+		return  $db -> query ('select * from ' . static::TABLE . ' '.'where '. $log.'=:id' . ';' ,
+			[':id' => $_POST[$log]] , 
+			static::class);
+	}
 }

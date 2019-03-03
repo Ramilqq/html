@@ -15,3 +15,8 @@ form {
     display: table;
     width: 100%;
 }
+
+#errorBlock{
+	display: none;
+	font-size: 12px;
+}

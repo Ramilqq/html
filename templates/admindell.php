@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <?php require_once __DIR__ . '/../Blocks/Head.php'    ?>
 
-  <link rel="stylesheet" href="App/View/Stile/css/bootstrap.css">
-  <link rel="stylesheet" href="App/View/Stile/css/bootstrap-reboot.css">
-  <link rel="stylesheet" href="App/View/Stile/mystile.css">
-  <title>myserver.website</title>
 </head>
 <body>
 
@@ -15,21 +11,17 @@
   <div class="container">
     <div class="row">
       <div class="col-2" align="left">
-        <div class="btn-group-vertical btn-block" role="group" aria-label="Basic example">
-          <a type="button" class="btn btn-secondary" href="/?cntr=AdminAdd">Add</a>
-          <a type="button" class="btn btn-secondary" href="/?cntr=AdminDell">Dell</a>
-          <a type="button" class="btn btn-secondary" href="/?cntr=Index">Home</a>
-        </div>
+        <?php require_once __DIR__ . '/../Blocks/MenuAdmin.php'    ?>
       </div>
       <div class="col-10" align="left">
         <div class="btn-group-vertical btn-block" role="group" aria-label="Basic example">
 
-<?php
-foreach ($qwe as $item) {
-  echo $item -> id;
-}
+          <?php
+          foreach ($qwe as $item) {
+            echo $item -> id;
+          }
 
-?>
+          ?>
 
         </div>
       </div>
@@ -39,8 +31,7 @@ foreach ($qwe as $item) {
 
 
 
-  <script src="App/View/Stile/js/jquery-slim.min.js"></script>
-  <script src="App/View/Stile/js/bootstrap.js"></script>
+  <?php require_once __DIR__ . '/../Blocks/Js.php'    ?>
 
 </body>
 </html>
