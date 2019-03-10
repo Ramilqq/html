@@ -12,4 +12,8 @@ class AdminDell extends Controller{
 		$qwe =  \App\Model\News::expend();
 		include __DIR__ . "/../../templates/admindell.php";
 	}
+
+	public function login (){
+		$this -> view -> display(__DIR__ . "/../../templates/authorization.php");
+	}
 }

@@ -12,4 +12,7 @@ class Article extends Controller{
 		$this -> view -> news = News::expendStr();
 		$this -> view -> display(__DIR__ . "/../../templates/article.php");
 	}
+	public function login (){
+		$this -> view -> display(__DIR__ . "/../../templates/authorization.php");
+	}
 }

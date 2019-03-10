@@ -1,69 +1,97 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <?php require_once __DIR__ . '/../Blocks/Head.php'    ?>
+  <?php require_once __DIR__ . '/../Blocks/Head.php';    ?>
 </head>
 <body>
 
   <div class='myright'></div>
-  <div class="container">
+  <div class="container h-100">
     <div class="row">
-      <div class="col-sm" align="right">
-        <?php require_once __DIR__ . '/../Blocks/Menu.php'    ?>
+      <div class="col" align="right">
+        <?php require_once __DIR__ . '/../Blocks/Menu.php';    ?>
       </div>
     </div>
     <div class='myright'></div>
-
     <div class='myright'></div>
 
-    <div class="row">
-      <div class="col-sm">
-
-
-
-
-
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="col col-sm-8 col-md-5 col-sm-4 col-sm-4">
         <h2>Авторизация</h2>
-        <form class="form-horizontal">
-          <fieldset disabled="disabled">
-            <div class="form-group">
-              <label for="inputEmail" class="control-label col-xs-2">Email</label>
-              <div class="col-xs-10">
-                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="inputPassword" class="control-label col-xs-2">Пароль</label>
-              <div class="col-xs-10">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Пароль">
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-xs-offset-2 col-xs-10">
-                <div class="checkbox">
-                  <label><input type="checkbox"> Запомнить</label>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-xs-offset-2 col-xs-10">
-                <button type="submit" class="btn btn-primary">Войти</button>
-              </div>
-            </div>
-          </fieldset>
+        <form class="form-horizontal" method="post" id="myForm">
+          <div class="form-group" >
+            <label class="control-label col-xs-3" for="login">Логин:</label>
+            <input type="text" class="form-control" id="login" name="login" placeholder="Введите логин">
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-xs-3" for="passvordone">Пароль:</label>
+            <input type="password" class="form-control" id="passvord" name="passvord" placeholder="Введите пароль">
+          </div>
+
+
+          <div class="form-group">
+            <span id="msg"></span>
+          </div>
+
+          <div class="alert alert-danger" id="errorBlock"></div>
+
+          <div class="form-group">
+            <button  type="submit" class="btn btn-primary" id="butReg">Авторизцаия</button>
+            <input type="reset" class="btn btn-default" value="Очистить форму">
+          </div>
         </form>
-
-
-
-
-
-
       </div>
+    </div>
+    
+    <div class="row">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
   </div>
+  <?php require_once __DIR__ . '/../Blocks/Js.php';?>
+  <script>
+    const myForm = document.getElementById('myForm');
 
+    myForm.addEventListener('submit', function (e){
+      e.preventDefault();
 
+      const formData = new FormData(this);
 
-  <?php require_once __DIR__ . '/../Blocks/Js.php'    ?>
+      fetch ('/../Form/Authorization.php', {
+        method : 'post',
+        body : formData,
+        headers: {},
+        credentials: "same-origin"
+      }).then (function (response){
+        return response.text();
+      }).then (function (text){
+        console.log(text);
+
+        var objectURL = document.getElementById('msg');
+        objectURL.style.color =  'red';
+        objectURL.innerHTML =  text;
+
+      }).catch (function (error){
+        console.error(error);
+      })
+    });
+  </script>
 </body>
 </html>

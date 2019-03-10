@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <?php require_once __DIR__ . '/../Blocks/Head.php'    ?>
+  <?php require_once __DIR__ . '/../Blocks/Head.php';    ?>
 
 </head>
 <body>
@@ -11,7 +11,7 @@
   <div class="container">
     <div class="row">
       <div class="col-2" align="left">
-        <?php require_once __DIR__ . '/../Blocks/MenuAdmin.php'    ?>
+        <?php require_once __DIR__ . '/../Blocks/MenuAdmin.php';    ?>
       </div>
       <div class="col-10" align="left">
         <div class="btn-group-vertical btn-block" role="group" aria-label="Basic example">
@@ -31,7 +31,7 @@
 
 
 
-  <?php require_once __DIR__ . '/../Blocks/Js.php'    ?>
+  <?php require_once __DIR__ . '/../Blocks/Js.php';    ?>
 
 </body>
 </html>

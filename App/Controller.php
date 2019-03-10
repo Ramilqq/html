@@ -12,16 +12,31 @@ abstract class Controller {
 	}
 
 	public function access () : bool{
-		return true;
+		$objSession = new \App\Session();
+		$cookie = $objSession -> getcookie();
+		if ($cookie) {
+			$qwe = \App\Model\Session::expendID(1);
+			foreach ($qwe as $item) {
+				$b = $item -> cookie;
+			}
+			$session = \App\Session::setcookie('user',$b);
+			return true;
+		}else{
+			$qwe = \App\Model\Session::expendID(1);
+			foreach ($qwe as $item) {
+				$b = $item -> cookie;
+			}
+			$session = \App\Session::setcookie('user',$b);
+			return false;
+		}
 	}
-
 
 	public function action (){
 		if ($this -> access()) {
 			$this -> handle();
 		}
 		else {
-			die('ERROR');
+			$this -> login();
 		}
 	}
 }

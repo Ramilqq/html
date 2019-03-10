@@ -12,4 +12,7 @@ class Index extends Controller{
 		$this -> view -> news = News::expend();
 		$this -> view -> display(__DIR__ . "/../../templates/index.php");
 	}
+	public function login (){
+		$this -> view -> display(__DIR__ . "/../../templates/authorization.php");
+	}
 }

@@ -2,9 +2,6 @@
 
 require_once dirname (__DIR__) . '/App/autoload.php';
 
-
-
-
 $login  = trim(filter_var($_POST['login']));
 $email  = trim(filter_var($_POST['email']));
 $passwordone  = trim(filter_var($_POST['passvordone']));
@@ -12,19 +9,17 @@ $passwordtwo  = trim(filter_var($_POST['passvordtwo']));
 
 $error = false;
 
-
-
 if (strlen($login) <= 3) {
 	echo 'Логин должен быть больше 3 символов. '; $error = true;
-}elseif (ctype_alnum($login)){
+}elseif (strpbrk($login, ',./\!@#$%^&*(){}[]|?<>+-№"~ ') != false){
+	echo 'Запрещенные символы для логина ,./\!@#$%^&*(){}[]|?<>+-№"~ ';$error = true;
+}elseif ($login != NULL){
 	$loginDB =  \App\Model\Users::expendFind('login');
 	foreach ($loginDB as $itemLogin) {
 		if ($itemLogin->login == $login) {
 			echo 'Такой логин существует. ';$error = true;
 		}
 	}
-}else{
-	echo 'Запрещенные символы для логина';$error = true;
 }
 
 if (strlen($email) <= 3) {
@@ -51,7 +46,6 @@ if (strpbrk($email, '@') == '@mail.ru'){
 	echo '3.Email некрректный. ';$error = true;
 }
 
-
 if (strlen($passwordone) <= 3) {
 	echo 'Пароль должен быть больше 3 символов. '; $error = true;
 }elseif ( strlen($passwordone) >= 16){
@@ -67,7 +61,7 @@ if ($error != false) {
 	$qwe = new \App\Model\Users();
 	$qwe -> login = $login;
 	$qwe -> email = $email;
-	$qwe -> passvord = password_hash($passwordone, PASSWORD_DEFAULT);
+	$qwe -> passvord = $passwordone;
 	$qwe -> insert();
-	echo 'отправлено';
+	header("Location: \ ");
 }

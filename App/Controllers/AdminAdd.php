@@ -11,4 +11,8 @@ class AdminAdd extends Controller{
 	public function handle (){
 		include __DIR__ . "/../../templates/adminadd.php";
 	}
+
+	public function login (){
+		$this -> view -> display(__DIR__ . "/../../templates/authorization.php");
+	}
 }

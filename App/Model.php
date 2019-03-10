@@ -51,4 +51,29 @@ abstract class Model
 			[':id' => $_POST[$log]] , 
 			static::class);
 	}
+
+
+	public static function expendID(int $id)
+	{
+		$db = new Db();
+		return  $db -> query ('select * from ' . static::TABLE . ' '.'where id=:id' . ';' ,
+			[':id' => $id] , 
+			static::class);
+	}
+
+	public static function expendSession($cookie)
+	{
+		$db = new Db();
+		return  $db -> query ('select * from ' . static::TABLE . ' '.'where cookie=:id' . ';' ,
+			[':id' => $cookie] , 
+			static::class);
+	}
+
+	public static function delete(int $id)
+	{
+		$db = new Db();
+		return  $db -> query ('delete  from ' . static::TABLE . ' '.'where id=:id' . ';' ,
+			[':id' => $id] , 
+			static::class);
+	}
 }
